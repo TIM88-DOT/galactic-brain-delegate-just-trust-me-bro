@@ -339,91 +339,91 @@
   },
   "ast": {
     "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBController3_0_1.sol",
-    "id": 26903,
+    "id": 27086,
     "exportedSymbols": {
       "IERC165": [
-        28710
+        29039
       ],
       "IERC721": [
-        28698
+        29027
       ],
       "IJBController": [
-        26872
+        27055
       ],
       "IJBController3_0_1": [
-        26902
+        27085
       ],
       "IJBDirectory": [
-        27403
+        27586
       ],
       "IJBFundingCycleBallot": [
-        27489
+        27672
       ],
       "IJBFundingCycleStore": [
-        27626
+        27809
       ],
       "IJBMigratable": [
-        27636
+        27819
       ],
       "IJBPaymentTerminal": [
-        27721
+        27982
       ],
       "IJBProjects": [
-        27800
+        28061
       ],
       "IJBSplitAllocator": [
-        27830
+        28091
       ],
       "IJBSplitsStore": [
-        27886
+        28147
       ],
       "IJBToken": [
-        27962
+        28223
       ],
       "IJBTokenStore": [
-        28158
+        28419
       ],
       "IJBTokenUriResolver": [
-        28168
+        28429
       ],
       "JBBallotState": [
-        26472
+        26655
       ],
       "JBFundAccessConstraints": [
-        28238
+        28556
       ],
       "JBFundingCycle": [
-        28262
+        28580
       ],
       "JBFundingCycleData": [
-        28276
+        28594
       ],
       "JBFundingCycleMetadata": [
-        28318
+        28636
       ],
       "JBGlobalFundingCycleMetadata": [
-        28328
+        28646
       ],
       "JBGroupedSplits": [
-        28339
+        28657
       ],
       "JBProjectMetadata": [
-        28385
+        28714
       ],
       "JBSplit": [
-        28447
+        28776
       ],
       "JBSplitAllocationData": [
-        28465
+        28794
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "32:758:17",
+    "src": "32:758:19",
     "nodes": [
       {
-        "id": 26874,
+        "id": 27057,
         "nodeType": "PragmaDirective",
-        "src": "32:23:17",
+        "src": "32:23:19",
         "nodes": [],
         "literals": [
           "solidity",
@@ -433,203 +433,203 @@
         ]
       },
       {
-        "id": 26875,
+        "id": 27058,
         "nodeType": "ImportDirective",
-        "src": "57:65:17",
+        "src": "57:65:19",
         "nodes": [],
         "absolutePath": "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
         "file": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 28711,
+        "scope": 27086,
+        "sourceUnit": 29040,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26876,
+        "id": 27059,
         "nodeType": "ImportDirective",
-        "src": "123:50:17",
+        "src": "123:50:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/structs/JBFundAccessConstraints.sol",
         "file": "./../structs/JBFundAccessConstraints.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 28239,
+        "scope": 27086,
+        "sourceUnit": 28557,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26877,
+        "id": 27060,
         "nodeType": "ImportDirective",
-        "src": "174:45:17",
+        "src": "174:45:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/structs/JBFundingCycleData.sol",
         "file": "./../structs/JBFundingCycleData.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 28277,
+        "scope": 27086,
+        "sourceUnit": 28595,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26878,
+        "id": 27061,
         "nodeType": "ImportDirective",
-        "src": "220:49:17",
+        "src": "220:49:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/structs/JBFundingCycleMetadata.sol",
         "file": "./../structs/JBFundingCycleMetadata.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 28319,
+        "scope": 27086,
+        "sourceUnit": 28637,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26879,
+        "id": 27062,
         "nodeType": "ImportDirective",
-        "src": "270:42:17",
+        "src": "270:42:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/structs/JBGroupedSplits.sol",
         "file": "./../structs/JBGroupedSplits.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 28340,
+        "scope": 27086,
+        "sourceUnit": 28658,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26880,
+        "id": 27063,
         "nodeType": "ImportDirective",
-        "src": "313:44:17",
+        "src": "313:44:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/structs/JBProjectMetadata.sol",
         "file": "./../structs/JBProjectMetadata.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 28386,
+        "scope": 27086,
+        "sourceUnit": 28715,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26881,
+        "id": 27064,
         "nodeType": "ImportDirective",
-        "src": "358:29:17",
+        "src": "358:29:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBController.sol",
         "file": "./IJBController.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 26873,
+        "scope": 27086,
+        "sourceUnit": 27056,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26882,
+        "id": 27065,
         "nodeType": "ImportDirective",
-        "src": "388:28:17",
+        "src": "388:28:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBDirectory.sol",
         "file": "./IJBDirectory.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 27404,
+        "scope": 27086,
+        "sourceUnit": 27587,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26883,
+        "id": 27066,
         "nodeType": "ImportDirective",
-        "src": "417:36:17",
+        "src": "417:36:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBFundingCycleStore.sol",
         "file": "./IJBFundingCycleStore.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 27627,
+        "scope": 27086,
+        "sourceUnit": 27810,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26884,
+        "id": 27067,
         "nodeType": "ImportDirective",
-        "src": "454:29:17",
+        "src": "454:29:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBMigratable.sol",
         "file": "./IJBMigratable.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 27637,
+        "scope": 27086,
+        "sourceUnit": 27820,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26885,
+        "id": 27068,
         "nodeType": "ImportDirective",
-        "src": "484:34:17",
+        "src": "484:34:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBPaymentTerminal.sol",
         "file": "./IJBPaymentTerminal.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 27722,
+        "scope": 27086,
+        "sourceUnit": 27983,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26886,
+        "id": 27069,
         "nodeType": "ImportDirective",
-        "src": "519:30:17",
+        "src": "519:30:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBSplitsStore.sol",
         "file": "./IJBSplitsStore.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 27887,
+        "scope": 27086,
+        "sourceUnit": 28148,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26887,
+        "id": 27070,
         "nodeType": "ImportDirective",
-        "src": "550:29:17",
+        "src": "550:29:19",
         "nodes": [],
         "absolutePath": "node_modules/@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBTokenStore.sol",
         "file": "./IJBTokenStore.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26903,
-        "sourceUnit": 28159,
+        "scope": 27086,
+        "sourceUnit": 28420,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 26902,
+        "id": 27085,
         "nodeType": "ContractDefinition",
-        "src": "581:208:17",
+        "src": "581:208:19",
         "nodes": [
           {
-            "id": 26894,
+            "id": 27077,
             "nodeType": "FunctionDefinition",
-            "src": "614:84:17",
+            "src": "614:84:19",
             "nodes": [],
             "functionSelector": "bdd504d7",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "reservedTokenBalanceOf",
-            "nameLocation": "623:22:17",
+            "nameLocation": "623:22:19",
             "parameters": {
-              "id": 26890,
+              "id": 27073,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26889,
+                  "id": 27072,
                   "mutability": "mutable",
                   "name": "_projectId",
-                  "nameLocation": "654:10:17",
+                  "nameLocation": "654:10:19",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26894,
-                  "src": "646:18:17",
+                  "scope": 27077,
+                  "src": "646:18:19",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -637,10 +637,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 26888,
+                    "id": 27071,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "646:7:17",
+                    "src": "646:7:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -649,21 +649,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "645:20:17"
+              "src": "645:20:19"
             },
             "returnParameters": {
-              "id": 26893,
+              "id": 27076,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26892,
+                  "id": 27075,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26894,
-                  "src": "689:7:17",
+                  "scope": 27077,
+                  "src": "689:7:19",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -671,10 +671,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 26891,
+                    "id": 27074,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "689:7:17",
+                    "src": "689:7:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -683,37 +683,37 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "688:9:17"
+              "src": "688:9:19"
             },
-            "scope": 26902,
+            "scope": 27085,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 26901,
+            "id": 27084,
             "nodeType": "FunctionDefinition",
-            "src": "701:86:17",
+            "src": "701:86:19",
             "nodes": [],
             "functionSelector": "c18f2d31",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "totalOutstandingTokensOf",
-            "nameLocation": "710:24:17",
+            "nameLocation": "710:24:19",
             "parameters": {
-              "id": 26897,
+              "id": 27080,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26896,
+                  "id": 27079,
                   "mutability": "mutable",
                   "name": "_projectId",
-                  "nameLocation": "743:10:17",
+                  "nameLocation": "743:10:19",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26901,
-                  "src": "735:18:17",
+                  "scope": 27084,
+                  "src": "735:18:19",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -721,10 +721,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 26895,
+                    "id": 27078,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "735:7:17",
+                    "src": "735:7:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -733,21 +733,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "734:20:17"
+              "src": "734:20:19"
             },
             "returnParameters": {
-              "id": 26900,
+              "id": 27083,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26899,
+                  "id": 27082,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26901,
-                  "src": "778:7:17",
+                  "scope": 27084,
+                  "src": "778:7:19",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -755,10 +755,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 26898,
+                    "id": 27081,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "778:7:17",
+                    "src": "778:7:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -767,9 +767,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "777:9:17"
+              "src": "777:9:19"
             },
-            "scope": 26902,
+            "scope": 27085,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -782,16 +782,16 @@
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          26902
+          27085
         ],
         "name": "IJBController3_0_1",
-        "nameLocation": "591:18:17",
-        "scope": 26903,
+        "nameLocation": "591:18:19",
+        "scope": 27086,
         "usedErrors": [],
         "usedEvents": []
       }
     ],
     "license": "MIT"
   },
-  "id": 17
+  "id": 19
 }

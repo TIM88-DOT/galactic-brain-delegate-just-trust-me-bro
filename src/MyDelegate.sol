@@ -31,6 +31,11 @@ contract MyDelegate is IJBFundingCycleDataSource, IJBPayDelegate, IJBRedemptionD
     /// @notice The directory of terminals and controllers for projects.
     IJBDirectory public directory;
 
+    //Added function. PayoutBonuses declaration. for now weight 1 is %10, weight 2 is %20 and weight 3 is %30
+    uint256 public payoutbonus1 = (11);
+    uint256 public payoutbonus2 = (12);
+    uint256 public payoutbonus3 = (13);
+
     /// @notice Addresses allowed to make payments to the treasury.
     mapping(address => bool) public paymentFromAddressIsAllowed;
 
@@ -48,8 +53,19 @@ contract MyDelegate is IJBFundingCycleDataSource, IJBPayDelegate, IJBRedemptionD
         override
         returns (uint256 weight, string memory memo, JBPayDelegateAllocation[] memory delegateAllocations)
     {
-        // Forward the default weight received from the protocol.
-        weight = _data.weight;
+
+        //Added Code to asign weights               For now 0.1 eth is weight 1, 0.5 is weight 2, 1 is wight 3                                   //
+        uint256 payoutbonus = 10;
+
+        if (weight >= 1e17) {payoutbonus = payoutbonus1;}
+        if (weight >= 5e17) {payoutbonus = payoutbonus2;}
+        if (weight >= 10e17) {payoutbonus = payoutbonus3;}
+
+
+
+        // Forward the default weight received from the protocol. 
+        /// @notice Edited to Include modifiable bonus.                                  //
+        weight = (_data.weight * (payoutbonus / 10));
         // Forward the default memo received from the payer.
         memo = _data.memo;
         // Add `this` contract as a Pay Delegate so that it receives a `didPay` call. Don't send any funds to the delegate (keep all funds in the treasury).
