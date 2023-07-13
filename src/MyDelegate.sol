@@ -31,12 +31,23 @@ contract MyDelegate is IJBFundingCycleDataSource, IJBPayDelegate, IJBRedemptionD
     /// @notice The directory of terminals and controllers for projects.
     IJBDirectory public directory;
 
-    //Added function. PayoutBonuses declaration. for now weight 1 is %10, weight 2 is %20 and weight 3 is %30
-    uint256 public payoutbonus1 = (11);
-    uint256 public payoutbonus2 = (12);
-    uint256 public payoutbonus3 = (13);
 
-    /// @notice Addresses allowed to make payments to the treasury.
+    //Added function. PayoutBonuses declaration. 
+    uint256 private payoutbonus1;
+    uint256 private payoutbonus2;
+    uint256 private payoutbonus3;
+
+    
+    // Added function. BonusThreshold declarations.                     //
+    uint256 private bonusThreshold1;
+    uint256 private bonusThreshold2;
+    uint256 private bonusThreshold3;
+
+    // Added ability. Checks to make sure you didnt accidently let someone mint more tokens then they can make on redeem               //
+
+    uint256 public SafetyNumber;
+    
+     /// @notice Addresses allowed to make payments to the treasury.
     mapping(address => bool) public paymentFromAddressIsAllowed;
 
     /// @notice This function gets called when the project receives a payment.
@@ -48,29 +59,31 @@ contract MyDelegate is IJBFundingCycleDataSource, IJBPayDelegate, IJBRedemptionD
     /// @return delegateAllocations Amount to be sent to delegates instead of adding to local balance. Useful for auto-routing funds from a treasury as payment come in.
     function payParams(JBPayParamsData calldata _data)
         external
-        view
         virtual
         override
         returns (uint256 weight, string memory memo, JBPayDelegateAllocation[] memory delegateAllocations)
     {
 
         //Added Code to asign weights               For now 0.1 eth is weight 1, 0.5 is weight 2, 1 is wight 3                                   //
-        uint256 payoutbonus = 10;
+        uint256 payoutbonus = 100;
 
-        if (weight >= 1e17) {payoutbonus = payoutbonus1;}
-        if (weight >= 5e17) {payoutbonus = payoutbonus2;}
-        if (weight >= 10e17) {payoutbonus = payoutbonus3;}
-
-
+        if (weight >= bonusThreshold1) {payoutbonus = payoutbonus1;}
+        if (weight >= bonusThreshold2) {payoutbonus = payoutbonus2;}
+        if (weight >= bonusThreshold3) {payoutbonus = payoutbonus3;}
 
         // Forward the default weight received from the protocol. 
         /// @notice Edited to Include modifiable bonus.                                  //
-        weight = (_data.weight * (payoutbonus / 10));
+        weight = (_data.weight * (payoutbonus / 100));
         // Forward the default memo received from the payer.
         memo = _data.memo;
         // Add `this` contract as a Pay Delegate so that it receives a `didPay` call. Don't send any funds to the delegate (keep all funds in the treasury).
         delegateAllocations = new JBPayDelegateAllocation[](1);
         delegateAllocations[0] = JBPayDelegateAllocation(this, 0);
+
+        // Saves the weighting to the delegate for the purpose of a safety check later on redeem
+
+        SafetyNumber = _data.weight ;
+
     }
 
     /// @notice This function gets called when the project's token holders redeem.
@@ -88,6 +101,9 @@ contract MyDelegate is IJBFundingCycleDataSource, IJBPayDelegate, IJBRedemptionD
     {
         // Forward the default reclaimAmount received from the protocol.
         reclaimAmount = _data.reclaimAmount.value;
+    require ( SafetyNumber >= reclaimAmount / payoutbonus3 , "You are unable to redeem as you may effectivly have over a %100 redeem rate")  ;
+
+
         // Forward the default memo received from the redeemer.
         memo = _data.memo;
         // Add `this` contract as a Redeem Delegate so that it receives a `didRedeem` call. Don't send any extra funds to the delegate.
@@ -104,7 +120,20 @@ contract MyDelegate is IJBFundingCycleDataSource, IJBPayDelegate, IJBRedemptionD
             || _interfaceId == type(IJBPayDelegate).interfaceId || _interfaceId == type(IJBRedemptionDelegate).interfaceId;
     }
 
-    constructor() {}
+    constructor(uint256 _payoutbonus1,uint256 _payoutbonus2,uint256 _payoutbonus3, uint256 _bonusThreshold1, uint256 _bonusThreshold2, uint256 _bonusThreshold3) {
+
+            //This sets the payout bonuses. payoutbonus of 100 means no change
+    _payoutbonus1 = payoutbonus1;
+    _payoutbonus2 = payoutbonus2;
+    _payoutbonus3 = payoutbonus3;
+
+    
+    // Sets BonusThresholds for what someone wants the minimum contribution to be to get a bonus.       Calculated in Wei               //
+    _bonusThreshold1 = bonusThreshold1;
+    _bonusThreshold2 = bonusThreshold2;
+    _bonusThreshold3 = bonusThreshold3;
+
+    }
 
     /// @notice Initializes the clone contract with project details and a directory from which ecosystem payment terminals and controller can be found.
     /// @param _projectId The ID of the project this contract's functionality applies to.
